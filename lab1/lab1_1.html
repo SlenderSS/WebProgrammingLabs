@@ -3,19 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Робота з діалоговими вікнами</title>
+    <title>Ольховик Олександр КІ-44</title>
 </head>
 
 <body>
     <script>
         "use strict";
         alert("Моє перше діалогове вікно");
-        const answer = confirm("Хочете продовжити виконання сценарію на JavaScript");
-        if (answer) {
-            const name = prompt("Введіть ваше ім'я", "");
-            alert(name + ", y вас вже починає виходити!");
+        let answer = confirm('Хочете продовжити виконання сценарію на JavaScript');
+        if (!answer) {
+            alert("Шкода, можна було б ще попрацювати!");   
         }
-        else alert("Шкода, можна було б ще попрацювати!");
+        else {
+            const name = prompt("Введіть ваше ім'я", "");
+            alert(`${name}, y вас вже починає виходити!`);
+            answer = confirm(`${name}, чи хотіли б ви розповісти якусь історію?`);
+            if(answer){
+                const history = prompt(`Гаразд, ${name}, тоді розкажіть мені цікаву історію`,"");
+                if(history == ""){
+                    alert(`${name}, на жаль, ви так і не розповіли історію`);
+                }
+                else{
+                    alert(`${name}, чудова і захоплива історія, дякую вам!`);
+                }
+            }
+            else{
+                alert(`Я вас зрозумів, погано що ви не можете розказати щось цікаве`);
+            }
+        }
+
+
+        
     </script>
 </body>
 

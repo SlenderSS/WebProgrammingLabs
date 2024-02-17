@@ -3,19 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Лінійні алгоритми</title>
+    <title>Ольховик Олександр КІ-44</title>
 </head>
 
 <body>
     <script>
         "use strict";
-        let n = parseInt(prompt("Введіть кількість кутів n", ""));
-        let r = parseInt(prompt("Введіть радіус r", ""));
-        let a = 2 * r * Math.tan(Math.PI / n);
-        let p = a * n;
-        let s = (1 / 2) * n * a * r;
-        alert("Площа =" + s.toFixed(2));
-        alert("Периметр =" + p.toFixed(2));
+        alert("Давай обрахуємо площу і об\'єм зрізаного конуса.");
+
+        let r1 = parseInt(prompt("Введіть радіус більшої основи r1", ""));
+        let r2 = parseInt(prompt("Введіть радіус меншої основи r2", ""));
+        let h = parseInt(prompt("Введіть висоту зрізаного конуса h", ""))
+
+        let area = Math.PI * (r1 + r2) * h + Math.PI * r1 * r1 + Math.PI * r2 * r2;
+
+        let volume = (1 / 3) * Math.PI * h * (r1 * r1 + r1 * r2 + r2 * r2);
+
+        alert("Площа поверхні зрізаного конуса=" + area.toFixed(2));
+        alert("Об'єм зрізаного конуса =" + volume.toFixed(2));
     </script>
 </body>
 
