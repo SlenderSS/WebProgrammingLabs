@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        // Функція для обчислення об'єму прямокутного паралелепіпеда
+        function calculateVolume(length, width = 1, height = 1) {
+            return length * width * height;
+        }
+
+        // Виклики функції з різними комбінаціями параметрів
+        let volume1 = calculateVolume(5); // використовується ширина та висота за замовчуванням
+        let volume2 = calculateVolume(5, 3); // використовується висота за замовчуванням
+        let volume3 = calculateVolume(5, 3, 2); // всі параметри задані
+
+        // Виведення результатів на екран
+        document.write("<p>Об'єм 1: " + volume1 + "</p>");
+        document.write("<p>Об'єм 2: " + volume2 + "</p>");
+        document.write("<p>Об'єм 3: " + volume3 + "</p>");
+    </script>
+
+
+</body>
+
+</html>

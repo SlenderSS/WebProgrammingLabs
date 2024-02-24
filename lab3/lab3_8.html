@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        // Функція, яка обчислює суму всіх переданих аргументів
+        function calculateSum() {
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+
+        // Виклик функції з різними кількостями аргументів
+        let result1 = calculateSum(1, 2, 3, 4, 5);
+        let result2 = calculateSum(10, 20, 30);
+
+        // Виведення результатів на екран
+        document.write("<p>Результат 1: " + result1 + "</p>");
+        document.write("<p>Результат 2: " + result2 + "</p>");
+    </script>
+
+</body>
+
+</html>
