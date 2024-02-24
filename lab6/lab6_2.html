@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        function Speaker(type, amplifier, maxPower, enclosureMaterial) {
+            this._type = type; // Приватне поле "Тип"
+            this._amplifier = amplifier; // Приватне поле "Підсилювач"
+            this._maxPower = maxPower; // Приватне поле "Максимальна потужність"
+            this._enclosureMaterial = enclosureMaterial; // Приватне поле "Матеріал корпусу"
+            this._releaseDate = new Date(); // Приватне поле "Дата виходу на ринок"
+
+            // Геттери та сеттери
+            this.getType = function () {
+                return this._type;
+            };
+
+            this.setType = function (newType) {
+                this._type = newType;
+            };
+
+            this.getAmplifier = function () {
+                return this._amplifier;
+            };
+
+            this.setAmplifier = function (newAmplifier) {
+                this._amplifier = newAmplifier;
+            };
+
+            this.getMaxPower = function () {
+                return this._maxPower;
+            };
+
+            this.setMaxPower = function (newMaxPower) {
+                this._maxPower = newMaxPower;
+            };
+
+            this.getEnclosureMaterial = function () {
+                return this._enclosureMaterial;
+            };
+
+            this.setEnclosureMaterial = function (newEnclosureMaterial) {
+                this._enclosureMaterial = newEnclosureMaterial;
+            };
+        }
+
+        // Додавання методу відображення інформації про об'єкт до прототипу
+        Speaker.prototype.displayInfo = function () {
+            console.log("Тип: " + this._type);
+            console.log("Підсилювач: " + this._amplifier);
+            console.log("Максимальна потужність: " + this._maxPower);
+            console.log("Матеріал корпусу: " + this._enclosureMaterial);
+            console.log("Дата виходу на ринок: " + this._releaseDate.toDateString());
+        };
+
+        // Створення об'єкта "Акустика" за допомогою конструктора
+        let speaker1 = new Speaker("Bookshelf", "Integrated", "100W", "Wood");
+
+        // Виклик методу для відображення інформації про об'єкт
+        speaker1.displayInfo();
+
+        // Використання геттерів та сеттерів
+        console.log("\nЗміна типу акустики:");
+        console.log("Поточний тип:", speaker1.getType());
+        speaker1.setType("Floorstanding");
+        console.log("Новий тип:", speaker1.getType());
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        let acousticSystem = {
+                type: "Bookshelf",            // Тип акустичної системи
+                amplifier: "Integrated",      // Тип підсилювача
+                maxPower: "100W",             // Максимальна потужність
+                enclosureMaterial: "Wood",    // Матеріал корпусу
+                displayInfo: function () {     // Метод виведення інформації про акустичну систему
+                    console.log("Тип: " + this.type);
+                    console.log("Підсилювач: " + this.amplifier);
+                    console.log("Максимальна потужність: " + this.maxPower);
+                    console.log("Матеріал корпусу: " + this.enclosureMaterial);
+                }
+            };
+
+            // Виведення інформації про акустичну систему
+            acousticSystem.displayInfo();
+
+
+    </script>
+
+</body>
+
+</html>

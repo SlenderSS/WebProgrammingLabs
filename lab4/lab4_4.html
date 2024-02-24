@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+
+
+
+
+        let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        let citrus = ['orange', 'lemon', 'lime'];
+
+        // Виведення масиву fruits
+        console.log("Масив fruits:");
+        console.log(fruits);
+
+        // Виведення масиву citrus
+        console.log("\nМасив citrus:");
+        console.log(citrus);
+
+        // Об'єднання масивів fruits та citrus
+        let combinedArray = fruits.concat(citrus);
+        console.log("\nОб'єднаний масив fruits та citrus:");
+        console.log(combinedArray);
+
+        // Вставлення нових елементів після mango у масив fruits
+        fruits.splice(fruits.indexOf('mango') + 1, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+        console.log("\nМасив fruits з новими елементами після mango:");
+        console.log(fruits);
+
+        // Видалення останніх трьох елементів з масиву fruits
+        fruits.splice(-3);
+        console.log("\nМасив fruits після видалення останніх трьох елементів:");
+        console.log(fruits);
+
+        // Сортування масиву fruits в алфавітному порядку
+        console.log("\nМасив fruits, відсортований в алфавітному порядку:");
+        console.log(fruits.sort());
+
+        // Сортування масиву fruits у зворотному алфавітному порядку
+        console.log("\nМасив fruits, відсортований у зворотному алфавітному порядку:");
+        console.log(fruits.reverse());
+
+        // Сортування масиву fruits за довжиною слів
+        console.log("\nМасив fruits, відсортований за довжиною слів:");
+        console.log(fruits.sort((a, b) => a.length - b.length));
+
+
+    </script>
+
+</body>
+
+</html>

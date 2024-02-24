@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+       let inputString = "I2AI3A4ABABAB";
+
+        // Вставка символу '*' після кожної пари символів 'AB'
+        let modifiedString = inputString.replace(/AB/g, 'AB*');
+
+        // Підрахунок кількості входжень символу 'I', що стоїть перед '2'
+        let countI2 = (inputString.match(/I2/g) || []).length;
+
+        console.log("Змінений рядок з '*' після кожної пари 'AB':");
+        console.log(modifiedString);
+
+        console.log("\nКількість разів, коли 'I' стоїть перед '2':");
+        console.log(countI2);
+    </script>
+
+</body>
+
+</html>

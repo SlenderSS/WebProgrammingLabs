@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+
+
+
+
+        function calculateProductAndCountNegatives(numbers) {
+                let product = 1;
+                let countNegativesMultipleOf3 = 0;
+
+                // Перевіряємо кожне число у масиві
+                for (let i = 0; i < numbers.length; i++) {
+                    // Якщо число від'ємне і кратне 3, збільшуємо лічильник
+                    if (numbers[i] < 0 && numbers[i] % 3 === 0) {
+                        countNegativesMultipleOf3++;
+                    } else if (numbers[i] > 0) {
+                        // Якщо число додатне, множимо його на добуток чисел
+                        product *= numbers[i];
+                    }
+                }
+
+                return { product, countNegativesMultipleOf3 };
+            }
+
+            // Готовий масив чисел
+            let numbers = [5, -3, 8, -1, 9, 2, -6, 7, -12];
+
+            // Обчислення добутку та кількості від'ємних чисел, що кратні 3
+            let result = calculateProductAndCountNegatives(numbers);
+
+            // Виведення результатів
+            console.log("Добуток чисел у масиві:", result.product);
+            console.log("Кількість від'ємних чисел, що кратні 3:", result.countNegativesMultipleOf3);
+
+
+    </script>
+
+</body>
+
+</html>

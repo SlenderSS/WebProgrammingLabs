@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        class Speaker {
+            constructor(type, amplifier, maxPower, enclosureMaterial) {
+                this._type = type; // Тип акустичної системи
+                this._amplifier = amplifier; // Тип підсилювача
+                this._maxPower = maxPower; // Максимальна потужність
+                this._enclosureMaterial = enclosureMaterial; // Матеріал корпусу
+                this._releaseDate = new Date(); // Дата виходу на ринок
+            }
+
+            // Гетери та сеттери, як у попередньому прикладі
+
+            // Метод відображення інформації про об'єкт
+            displayInfo() {
+                console.log("Тип: " + this._type);
+                console.log("Підсилювач: " + this._amplifier);
+                console.log("Максимальна потужність: " + this._maxPower);
+                console.log("Матеріал корпусу: " + this._enclosureMaterial);
+                console.log("Дата виходу на ринок: " + this._releaseDate.toDateString());
+            }
+        }
+
+        // Похідний клас, який є спадкоємцем класу Speaker
+        class EnhancedSpeaker extends Speaker {
+            constructor(type, amplifier, maxPower, enclosureMaterial, releaseDate, cost) {
+                super(type, amplifier, maxPower, enclosureMaterial); // Викликаємо конструктор батьківського класу
+                this._releaseDate = releaseDate; // Додаткова властивість - дата виходу на ринок
+                this._cost = cost; // Додаткова властивість - вартість
+            }
+
+            // Перевизначений метод виведення інформації про об'єкт
+            displayInfo() {
+                super.displayInfo(); // Викликаємо метод батьківського класу для виведення базової інформації
+                console.log("Дата виходу на ринок: " + this._releaseDate.toDateString());
+                console.log("Вартість: " + this._cost);
+            }
+        }
+
+        // Приклад використання класу EnhancedSpeaker
+        let enhancedSpeaker1 = new EnhancedSpeaker("Bookshelf", "Integrated", "100W", "Wood", new Date("2023-01-01"), "$200");
+        enhancedSpeaker1.displayInfo();
+        ////5 task
+        // Створення масиву об'єктів enhancedSpeakers
+        let enhancedSpeakers = [
+            new EnhancedSpeaker("Bookshelf", "Integrated", "100W", "Wood", new Date("2023-01-01"), 200),
+            new EnhancedSpeaker("Floorstanding", "Integrated", "200W", "Wood", new Date("2022-05-15"), 300),
+            new EnhancedSpeaker("Bookshelf", "Separate", "150W", "Plastic", new Date("2022-12-10"), 250),
+            new EnhancedSpeaker("Subwoofer", "Integrated", "300W", "Metal", new Date("2023-03-20"), 400)
+        ];
+
+        // Знаходимо об'єкт з максимальною вартістю
+        let maxCostSpeaker = enhancedSpeakers.reduce((max, speaker) => (speaker.cost > max.cost ? speaker : max), enhancedSpeakers[0]);
+
+        // Знаходимо об'єкт з мінімальною вартістю
+        let minCostSpeaker = enhancedSpeakers.reduce((min, speaker) => (speaker.cost < min.cost ? speaker : min), enhancedSpeakers[0]);
+
+        // Сумарна вартість усіх об'єктів
+        let totalCost = enhancedSpeakers.reduce((total, speaker) => total + speaker.cost, 0);
+
+        // Обчислюємо середню вартість об'єкта
+        let averageCost = totalCost / enhancedSpeakers.length;
+
+        // Підраховуємо кількість об'єктів із вартістю вище за середню
+        let aboveAverageCount = enhancedSpeakers.filter(speaker => speaker.cost > averageCost).length;
+
+        // Виводимо результати
+        console.log("Об'єкт з максимальною вартістю:", maxCostSpeaker);
+        console.log("Об'єкт з мінімальною вартістю:", minCostSpeaker);
+        console.log("Сумарна вартість усіх об'єктів:", totalCost);
+        console.log("Середня вартість об'єкта:", averageCost);
+        console.log("Кількість об'єктів із вартістю вище за середню:", aboveAverageCount);
+
+    </script>
+
+</body>
+
+</html>

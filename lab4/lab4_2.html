@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+
+        let arr = Array.from({ length: 20 }, (_, n) => parseInt(Math.random() * (100 - 1) + 1));
+        alert('arr ' + arr.join('  '));
+        let minIndex = 0;
+        arr.forEach((value, index) => {
+            if(value < arr[minIndex])
+                minIndex = index;
+        });
+        let temp = arr[minIndex];
+        arr[minIndex] = arr[arr.length - 2];
+        arr[arr.length - 2] = temp;
+
+        alert('Result: ' + arr.join((', ')));
+
+    </script>
+
+</body>
+
+</html>

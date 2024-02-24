@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+
+        let treag = Array.from({ length: 10 }, (_, n) => (n * (n + 1) / 2));
+        alert('treag ' +treag.join('  '));
+        let kvd = Array.from({ length: 10 }, (_, n) => (n * n));
+        alert('kvd ' +kvd.join(' '));
+        let rez = treag.concat(kvd);
+        alert('rez ' + rez.join(', '))
+        rez.sort((a, b) => b - a);
+        alert('sorted rez ' + rez.join(', '));
+    </script>
+
+</body>
+
+</html>

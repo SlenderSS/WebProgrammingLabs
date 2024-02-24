@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        class Speaker {
+            constructor(type, amplifier, maxPower, enclosureMaterial) {
+                this._type = type; // Тип акустичної системи
+                this._amplifier = amplifier; // Тип підсилювача
+                this._maxPower = maxPower; // Максимальна потужність
+                this._enclosureMaterial = enclosureMaterial; // Матеріал корпусу
+                this._releaseDate = new Date(); // Дата виходу на ринок
+            }
+
+            // Гетери та сеттери
+            get type() {
+                return this._type;
+            }
+
+            set type(newType) {
+                this._type = newType;
+            }
+
+            get amplifier() {
+                return this._amplifier;
+            }
+
+            set amplifier(newAmplifier) {
+                this._amplifier = newAmplifier;
+            }
+
+            get maxPower() {
+                return this._maxPower;
+            }
+
+            set maxPower(newMaxPower) {
+                this._maxPower = newMaxPower;
+            }
+
+            get enclosureMaterial() {
+                return this._enclosureMaterial;
+            }
+
+            set enclosureMaterial(newEnclosureMaterial) {
+                this._enclosureMaterial = newEnclosureMaterial;
+            }
+
+            // Метод відображення інформації про об'єкт
+            displayInfo() {
+                console.log("Тип: " + this._type);
+                console.log("Підсилювач: " + this._amplifier);
+                console.log("Максимальна потужність: " + this._maxPower);
+                console.log("Матеріал корпусу: " + this._enclosureMaterial);
+                console.log("Дата виходу на ринок: " + this._releaseDate.toDateString());
+            }
+        }
+
+        // Приклад використання класу
+        let speaker1 = new Speaker("Bookshelf", "Integrated", "100W", "Wood");
+        speaker1.displayInfo();
+
+        // Зміна типу акустики за допомогою сеттера
+        console.log("\nЗміна типу акустики:");
+        console.log("Поточний тип:", speaker1.type);
+        speaker1.type = "Floorstanding";
+        console.log("Новий тип:", speaker1.type);
+
+
+    </script>
+
+</body>
+
+</html>

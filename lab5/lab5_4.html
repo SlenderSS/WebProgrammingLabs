@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        function shuffleLettersInWords(sentence) {
+            let words = sentence.split(' '); // Розділяємо речення на слова
+            let shuffledSentence = "";
+
+            // Перебираємо кожне слово
+            for (let i = 0; i < words.length; i++) {
+                let word = words[i];
+                let firstLetter = word[0]; // Зберігаємо першу букву слова
+                let lastLetter = word[word.length - 1]; // Зберігаємо останню букву слова
+
+                // Перемішуємо всі літери у слові, крім першої та останньої
+                let shuffledWord = word.slice(1, -1).split('').sort(() => Math.random() - 0.5).join('');
+
+                // Збираємо перемішане слово з першою та останньою буквами на своїх місцях
+                let finalWord = firstLetter + shuffledWord + lastLetter;
+
+                // Додаємо слово до результуючого речення
+                shuffledSentence += finalWord + " ";
+            }
+
+            return shuffledSentence.trim(); // Видаляємо зайвий пробіл з кінця рядка
+        }
+
+        let sentence = "Hello, world! This is a test sentence."; // Вхідне речення
+        let shuffledSentence = shuffleLettersInWords(sentence); // Перемішане речення
+        console.log("Перемішане речення:", shuffledSentence);
+
+
+    </script>
+
+</body>
+
+</html>
