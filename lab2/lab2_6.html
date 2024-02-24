@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Використання оператора IF</title>
+</head>
+
+<body>
+    <script>
+        // Масив зі словами, які використовуються у грі
+        let words = ['apple', 'banana', 'cherry', 'grape', 'orange'];
+
+        // Початок гри
+        alert("Ласкаво просимо до гри! Комп'ютер назве деякі фрукти, а вам потрібно буде повторити цю послідовність.");
+
+        // Початкова довжина послідовності
+        let sequenceLength = 3;
+
+        // Головний цикл гри
+        let gameIsRunning = true;
+        while (gameIsRunning) {
+            // Генеруємо випадкову послідовність слів
+            let sequence = [];
+            for (let i = 0; i < sequenceLength; i++) {
+                let randomIndex = Math.floor(Math.random() * words.length);
+                sequence.push(words[randomIndex]);
+            }
+
+            // Виводимо послідовність користувачеві
+            alert("Послідовність: " + sequence.join(', '));
+
+            // Користувач повинен повторити послідовність
+            let userSequence = prompt("Повторіть послідовність, розділивши слова комою:");
+
+            // Перевіряємо, чи користувач правильно повторив послідовність
+            let userSequenceArray = userSequence.split(',').map(word => word.trim());
+            let isCorrect = true;
+            for (let i = 0; i < sequence.length; i++) {
+                if (sequence[i] !== userSequenceArray[i]) {
+                    isCorrect = false;
+                    break;
+                }
+            }
+
+            if (isCorrect) {
+                alert("Ви відтворили послідовність правильно!");
+                sequenceLength++; // Збільшуємо довжину послідовності для наступного раунду
+            } else {
+                alert("Неправильно! Гра завершена. Ваш результат: " + (sequenceLength - 1) + " послідовностей.");
+                gameIsRunning = false; // Завершуємо гру
+            }
+        }
+    </script>
+
+</body>
+
+</html>

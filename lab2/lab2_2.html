@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ольховик Олександр КІ-44</title>
+</head>
+
+<body>
+    <script>
+        let number = prompt("Введіть число:");
+
+        if (!isNaN(number)) {
+            number = parseInt(number); // переводимо введене значення у ціле число
+
+            if (number % 2 === 0) {
+                document.write(number + " є парним числом.");
+            } else {
+                document.write(number + " є непарним числом.");
+            }
+        } else {
+            document.write("Введено не число.");
+        }
+    </script>
+</body>
+
+</html>
